@@ -5,7 +5,9 @@ using UnityEngine;
 public class LaserScan : MonoBehaviour
 {
 	public GameObject linePrefab;
-	public float ydecrement;
+	// makes the lasers slightly lower than the green dot
+	public float ydecrement;	
+	// distance to draw lines when they don't hit a wall
 	public float linedistance;
 	
 	private int numberLines;
