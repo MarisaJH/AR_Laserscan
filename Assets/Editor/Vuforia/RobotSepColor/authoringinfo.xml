@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARInfo>
+<TargetSet version="14.0" toolVersion="9.7.4">
+<ModelTarget name="RobotSepColor" targetId="1dd294ff664a47ab9e0d456192b8073a" version="11.1" toolVersion="9.7.4" bbox="-0.024000 0.002811 -0.024000 0.024000 0.096182 0.024000" previewImage="1dd294ff664a47ab9e0d456192b8073a_preview.jpg"/>
+
+</TargetSet>
+
+<Assembly name="RobotSepColors_assembly" assemblyId="07a9aa8b982a4fc8819659d4978a42e1">
+<Part name="RobotSepColor" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="viewpoint_0000" translation="-1.97563e-09 0.0291057 0.184334" rotation="AD: 0.9974222145008228 0.21042802936537586 -0.4131458653407071 229.581" image="RobotSepColor_viewpoint_0000.png" trained="no">
+
+</EntryPoint>
+
+</Assembly>
+
+</QCARInfo>

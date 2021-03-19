@@ -74,15 +74,17 @@ public class NetworkManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {	
-		IP = PlayerPrefs.GetString("IP","192.168.1.149");
-		//UnityEngine.Debug.Log(IP);
-        
-		robotTransform = new SerializableTransform();
-        
+		IP = PlayerPrefs.GetString("IP", "10.125.241.232");
+        //UnityEngine.Debug.Log(IP);
+        UnityEngine.Debug.Log("successfully Got IP");
+        robotTransform = new SerializableTransform();
+        UnityEngine.Debug.Log("successfully made transform");
         remoteEndPoint = new IPEndPoint(IPAddress.Parse(IP), port);
+        UnityEngine.Debug.Log("successfully set IPEndPoint");
         server = new UdpClient();
-        
-        StartCoroutine(sendData());	
+        UnityEngine.Debug.Log("successfully set up Udp");
+        StartCoroutine(sendData());
+        UnityEngine.Debug.Log("successfully started coroutine");
     }
     
     // Update is called once per frame

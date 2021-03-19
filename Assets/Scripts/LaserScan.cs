@@ -6,7 +6,9 @@ public class LaserScan : MonoBehaviour
 {
 	public GameObject linePrefab;
 	// makes the lasers slightly lower than the green dot
-	public float ydecrement;	
+	public float ydecrement;
+	public float xoffset;
+	public float zoffset;
 	// distance to draw lines when they don't hit a wall
 	public float linedistance;
 	
@@ -14,11 +16,13 @@ public class LaserScan : MonoBehaviour
 	private float angle;
 	private string laserskey = "Lasers";
 	private string anglekey = "Angle";
-	private int defaultLasers = 13;
+	private int defaultLasers = 15;
 	private float defaultAngle = 180.0f;
 	private GameObject[] lines;
+	bool lateStart = false;
 	
 	void Start() {
+		lateStart = true;
 		numberLines = PlayerPrefs.GetInt(laserskey, defaultLasers);
 		angle = PlayerPrefs.GetFloat(anglekey, defaultAngle);
 		
@@ -30,6 +34,11 @@ public class LaserScan : MonoBehaviour
 	
     void FixedUpdate()
     {
+        if (lateStart)
+        {
+			gameObject.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+			lateStart = false;
+        }
         // Bit shift the index of the layer (8) to get a bit mask
         int layerMask = 1 << 8;
 
@@ -42,7 +51,7 @@ public class LaserScan : MonoBehaviour
 		for (int i =0; i < lines.Length; i++) {
 			var lineRenderer = lines[i].GetComponent<LineRenderer>();
 			Vector3 direction = Quaternion.Euler(0,currangle,0) * transform.forward;
-			Vector3 origin = new Vector3(transform.position.x, transform.position.y - ydecrement, transform.position.z); 
+			Vector3 origin = new Vector3(transform.position.x-xoffset, transform.position.y - ydecrement, transform.position.z - zoffset); 
 			
 			RaycastHit hit;
 			// Does the ray intersect any objects excluding the player layer

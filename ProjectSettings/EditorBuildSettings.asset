@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 5522a5be1f7293b499b0c554c4ef27d5
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
-    guid: f214b6d09102e96438b1d7cb263e63c0
+    path: Assets/Scenes/HospitalARLaserScan.unity
+    guid: fe4f29ce42b462c418a33e9e13938eb3
   m_configObjects: {}
